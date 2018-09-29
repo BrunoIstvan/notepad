@@ -28,4 +28,12 @@ class NotaService {
         notaRepository.deleteById(id)
     }
 
+    fun buscaPorTitulo(titulo: String) : List<Nota> {
+        return notaRepository.findByTitulo(titulo)
+    }
+
+    fun buscaPorTituloContaining(titulo: String) : List<Nota> {
+        return notaRepository.findByTituloContainingIgnoreCase(titulo)
+    }
+
 }

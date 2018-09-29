@@ -28,6 +28,16 @@ class NotaController {
         return notaService.buscaPorId(id)
     }
 
+    @GetMapping("/{titulo}/find")
+    fun obtemPorTitulo(@PathVariable("titulo") titulo: String) : List<Nota> {
+        return notaService.buscaPorTitulo(titulo)
+    }
+
+    @GetMapping("/{titulo}/containing")
+    fun obtemPorTituloContaining(@PathVariable("titulo") titulo: String) : List<Nota> {
+        return notaService.buscaPorTituloContaining(titulo)
+    }
+
     @GetMapping
     fun lista() : List<Nota> {
         return notaService.buscaTodos()
